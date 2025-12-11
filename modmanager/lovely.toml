@@ -1,0 +1,29 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+dump_lua = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "self.SPEEDFACTOR = 1"
+position = "after"
+payload = '''
+require("balatromodmanager")
+InitBalatroModManager()
+print('did it fucking')
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.module]
+before = "main.lua"
+source = "lib/dkjson.lua"
+name = "dkjson"
+
+[[patches]]
+[patches.module]
+before = "main.lua"
+source = "module.lua"
+name = "balatromodmanager"

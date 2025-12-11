@@ -11,7 +11,6 @@ position = "after"
 payload = '''
 require("balatromodmanager")
 InitBalatroModManager()
-print('did it fucking')
 '''
 match_indent = true
 times = 1
@@ -26,4 +25,5 @@ name = "dkjson"
 [patches.module]
 before = "main.lua"
 source = "module.lua"
+
 name = "balatromodmanager"
